@@ -1,0 +1,61 @@
+/* Vista de usuarios: complementa style.css, cliente.css y entrenador.css (.input, .empty) */
+
+.btn-icon { gap: 10px; padding: 19px 24px; font-size: 16px; }
+
+.panel-table { padding: 26px 26px 14px; }
+
+/* ---------- Barra de filtros ---------- */
+.toolbar { display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; }
+.toolbar .input { height: 56px; }
+.input-search { width: 488px; max-width: 100%; }
+.input-select { padding: 0 12px; }
+.input-select select { font-size: 18px; padding-right: 8px; }
+
+/* ---------- Tabla ---------- */
+.table-wrap { overflow-x: auto; }
+.table { width: 100%; border-collapse: collapse; min-width: 1060px; }
+.table thead th {
+  background: #f4f4f4; text-align: left; font-size: 11px; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; color: #333; padding: 14px 16px;
+}
+.table thead th:first-child { border-radius: 8px 0 0 8px; }
+.table thead th:last-child  { border-radius: 0 8px 8px 0; }
+.table tbody td { padding: 20px 16px; border-bottom: 1px solid var(--line); vertical-align: middle; font-size: 15px; }
+.table tbody tr:last-child td { border-bottom: 0; }
+.table tbody tr:hover { background: #fafafa; }
+
+.mono { font-family: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace; font-size: 13px; color: #444; white-space: nowrap; }
+.muted-strong { color: #444; }
+
+.person { display: flex; align-items: center; gap: 12px; }
+.person strong { font-size: 16px; font-weight: 700; white-space: nowrap; }
+.avatar-md { width: 40px; height: 40px; background: #111; font-size: 13px; }
+
+.tag {
+  display: inline-block; font-size: 12px; font-weight: 600; padding: 7px 10px;
+  border: 1px solid var(--line); border-radius: 6px; background: #fafafa; white-space: nowrap;
+}
+
+.pill { padding: 9px 13px; font-size: 12px; }
+.pill-off { background: #eeeeee; color: #555; }
+
+/* ---------- Acciones (botones con icono) ---------- */
+.row-actions { display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+.row-actions form { display: flex; gap: 6px; }
+.icon-btn {
+  position: relative; width: 40px; height: 40px; display: inline-grid; place-items: center;
+  border: 1px solid var(--line); border-radius: 10px; background: #fff; color: #333; cursor: pointer;
+  font: inherit; padding: 0; transition: background .15s, color .15s, border-color .15s;
+}
+.icon-btn:hover { background: #111; border-color: #111; color: #fff; }
+.icon-btn-danger:hover { background: var(--red); border-color: var(--red); }
+.icon-btn-ok { color: var(--green); }
+.icon-btn-ok:hover { background: var(--green); border-color: var(--green); }
+.icon-btn:focus-visible { outline: 3px solid #ff8a97; outline-offset: 2px; }
+
+/* Tooltip ligero con el atributo title (accesible también para lectores de pantalla vía aria-label) */
+
+@media (max-width: 900px) {
+  .input-search { width: 100%; }
+}
+.empty-error { color: var(--red); font-weight: 600; }

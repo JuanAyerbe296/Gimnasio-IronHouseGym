@@ -1,0 +1,20 @@
+/* Edición de tipo de membresía: complementa style.css, modal.css (.m-grid, .m-field, .m-error),
+   usuario_detalle.css y bitacora_detalle.css (tarjeta de detalle superior) */
+
+.tipo-edit-card { margin-top: 22px; padding: 26px 26px 26px; }
+
+.tipo-edit-head h2 { font-size: 22px; font-weight: 500; }
+.tipo-edit-head p { font-size: 13px; color: var(--muted, #6b6b6b); margin-top: 12px; }
+
+.tipo-edit-grid { margin-top: 28px; gap: 22px 20px; }
+
+.tipo-edit-foot {
+  display: flex; justify-content: flex-end; gap: 12px;
+  margin-top: 32px; padding-top: 22px; border-top: 1px solid var(--line, #e6e6e6);
+}
+.tipo-edit-foot .btn { padding: 19px 20px; font-size: 16px; }
+
+@media (max-width: 680px) {
+  .tipo-edit-foot { flex-direction: column-reverse; }
+  .tipo-edit-foot .btn { width: 100%; text-align: center; }
+}

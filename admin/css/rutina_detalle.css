@@ -1,0 +1,14 @@
+/* Detalle de rutina: complementa style.css, usuarios.css (.table, .pill), modal.css (.page-alert),
+   usuario_detalle.css (.crumbs, .back-link, .data-grid), bitacora_detalle.css (.audit-*) y cliente_detalle.css (.tab-panel, .tab-empty) */
+
+.exercises-card { margin-top: 22px; }
+.exercises-card .tab-panel-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+.exercises-card .count { font-size: 13px; color: var(--muted, #6b6b6b); font-weight: 600; }
+
+.table-ex { min-width: 640px; }
+.ex-num {
+  display: inline-grid; place-items: center; width: 32px; height: 32px; border-radius: 50%;
+  background: #f1f1f1; font-size: 13px; font-weight: 700;
+}
+.table-ex .ex-name { font-weight: 700; }
+.table-ex .wrap-text { white-space: pre-line; max-width: 360px; line-height: 1.5; color: #444; }

@@ -1,0 +1,25 @@
+/* Detalle de la bitácora: complementa style.css, usuario_detalle.css (.crumbs, .back-link, .data-grid, h1) y usuarios.css (.pill) */
+
+.audit-card { padding: 26px 26px 26px; }
+
+.audit-head { display: flex; align-items: center; gap: 16px; padding-bottom: 22px; border-bottom: 1px solid var(--line, #e6e6e6); }
+.audit-icon {
+  width: 58px; height: 58px; border-radius: 12px; background: #111; color: #fff; flex: none;
+  display: grid; place-items: center;
+}
+.audit-title { flex: 1; min-width: 0; }
+.audit-title h2 { font-size: 24px; font-weight: 500; letter-spacing: -.3px; }
+.audit-title small { display: block; font-size: 13px; color: var(--muted, #6b6b6b); margin-top: 10px; }
+.audit-head .pill { padding: 9px 13px; font-size: 12px; }
+.pill-bad { background: #fdeaec; color: #a10016; }
+
+/* La rejilla reutiliza .data-grid; aquí solo se ajusta el espaciado de esta pantalla */
+.audit-card .data-grid { column-gap: 26px; margin-top: 10px; }
+.audit-card .data-grid > div { padding: 22px 0 16px; }
+
+.audit-note {
+  display: flex; align-items: center; gap: 16px; margin-top: 24px;
+  background: #eeeeee; border-radius: 14px; padding: 20px 22px; color: #333;
+}
+.audit-note .ico { flex: none; }
+.audit-note p { font-size: 13px; color: #555; }

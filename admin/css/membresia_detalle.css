@@ -1,0 +1,24 @@
+/* Detalle de membresía: complementa style.css, usuario_detalle.css (.detail-grid, .data-grid, .perms-eyebrow, .crumbs, .back-link)
+   y bitacora_detalle.css (.audit-card, .audit-head, .audit-icon, .audit-title) */
+
+.pill-warn { background: #fdf1cf; color: #8a5a00; }
+.pill-bad  { background: #fdeaec; color: #a10016; }
+
+/* Botón bajo la rejilla */
+.detail-more { margin-top: 24px; }
+.detail-more .btn { padding: 19px 20px; font-size: 16px; display: inline-block; }
+
+/* ---------- Tarjeta de solicitudes relacionadas ---------- */
+.card-related { padding: 26px 26px 28px; }
+.rel-title { font-size: 19px; font-weight: 500; margin-top: 16px; }
+.rel-text { font-size: 18px; color: #666; line-height: 1.55; margin-top: 6px; }
+
+.rel-list { margin-top: 18px; display: grid; gap: 12px; }
+.rel-list a {
+  display: block; border: 1px solid var(--line, #e6e6e6); border-radius: 12px; padding: 14px 16px;
+  transition: border-color .15s, background .15s;
+}
+.rel-list a:hover { border-color: #111; background: #fafafa; }
+.rel-list strong { display: block; font-size: 15px; font-weight: 700; }
+.rel-list small { display: block; font-size: 13px; color: var(--muted, #6b6b6b); margin-top: 6px; }
+.rel-list a:focus-visible { outline: 3px solid #ff8a97; outline-offset: 2px; }

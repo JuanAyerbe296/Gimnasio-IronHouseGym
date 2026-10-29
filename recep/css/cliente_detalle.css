@@ -1,0 +1,46 @@
+/* Detalle de cliente: complementa style.css, usuarios.css (.table, .pill, .icon-btn), modal.css (.page-alert),
+   usuario_detalle.css (.crumbs, .back-link, .detail-head, .data-grid) y bitacora_detalle.css */
+
+.pill-warn { background: #fdf1cf; color: #8a5a00; }
+.pill-bad  { background: #fdeaec; color: #a10016; }
+
+/* ---------- Tarjeta de perfil ---------- */
+.client-profile {
+  display: flex; align-items: center; gap: 22px; padding: 28px 26px; margin-bottom: 22px;
+}
+.client-profile .avatar-xxl { width: 90px; height: 90px; font-size: 28px; background: #111; flex: none; }
+.client-profile-text { flex: 1; min-width: 0; }
+.client-eyebrow { font-size: 13px; font-weight: 700; letter-spacing: 3px; color: var(--red, #e4001b); }
+.client-profile h2 { font-size: 28px; font-weight: 500; letter-spacing: -.5px; margin: 10px 0 12px; }
+.client-sub { font-size: 18px; color: #555; }
+.client-profile .pill { padding: 9px 13px; font-size: 12px; }
+
+/* ---------- Pestañas ---------- */
+.tabs { display: flex; gap: 6px; border-bottom: 1px solid var(--line, #e6e6e6); margin-bottom: 22px; overflow-x: auto; }
+.tabs a {
+  padding: 20px 18px; font-size: 14px; font-weight: 700; color: #555; white-space: nowrap;
+  border-bottom: 2px solid transparent; margin-bottom: -1px;
+}
+.tabs a:hover { color: #111; }
+.tabs a[aria-current="page"] { color: #111; border-bottom-color: var(--red, #e4001b); }
+.tabs a:focus-visible { outline: 2px solid var(--red, #e4001b); outline-offset: -2px; border-radius: 4px; }
+
+/* ---------- Datos personales ---------- */
+.personal-card { padding: 26px 26px 14px; }
+.personal-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; }
+.personal-head h2 { font-size: 22px; font-weight: 500; }
+.personal-head p { font-size: 13px; color: var(--muted, #6b6b6b); margin-top: 12px; }
+.personal-head .ico { margin: 8px 6px 0 0; color: #111; }
+.personal-card .data-grid { column-gap: 28px; margin-top: 8px; }
+.personal-card .data-grid .pill { margin-top: -4px; }
+
+/* ---------- Otras pestañas ---------- */
+.tab-panel { padding: 26px 26px 14px; }
+.tab-panel h2 { font-size: 22px; font-weight: 500; }
+.tab-panel > p { font-size: 13px; color: var(--muted, #6b6b6b); margin: 12px 0 18px; }
+.tab-empty { padding: 28px 0 20px; color: var(--muted, #6b6b6b); font-size: 15px; }
+
+@media (max-width: 640px) {
+  .client-profile { flex-wrap: wrap; }
+  .client-profile h2 { font-size: 24px; }
+}

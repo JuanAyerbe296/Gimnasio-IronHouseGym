@@ -1,0 +1,20 @@
+/* Edición de cliente: complementa style.css, modal.css (.m-grid, .m-field, .m-error),
+   usuario_detalle.css, bitacora_detalle.css y cliente_detalle.css (perfil, pestañas y datos personales) */
+
+.client-edit-card { margin-top: 22px; padding: 26px 26px 26px; }
+
+.client-edit-head h2 { font-size: 22px; font-weight: 500; }
+.client-edit-head p { font-size: 13px; color: var(--muted, #6b6b6b); margin-top: 12px; }
+
+.client-edit-grid { margin-top: 24px; gap: 22px 20px; }
+
+.client-edit-foot {
+  display: flex; justify-content: flex-end; gap: 12px;
+  margin-top: 32px; padding-top: 22px; border-top: 1px solid var(--line, #e6e6e6);
+}
+.client-edit-foot .btn { padding: 19px 20px; font-size: 16px; }
+
+@media (max-width: 680px) {
+  .client-edit-foot { flex-direction: column-reverse; }
+  .client-edit-foot .btn { width: 100%; text-align: center; }
+}

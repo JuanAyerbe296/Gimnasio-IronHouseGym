@@ -1,0 +1,19 @@
+/* Vista de solicitudes de baja: complementa style.css, entrenador.css (.input),
+   usuarios.css (.toolbar, .table, .mono, .pill-off) y los .icon-btn de style.css */
+
+.panel-requests { padding: 26px 26px 14px; }
+.table-requests { min-width: 1180px; }
+.table-requests td strong { font-weight: 700; }
+.table-requests .nowrap { white-space: nowrap; }
+.dash { color: #666; }
+
+.pill-ok  { background: #e6f5ec; color: var(--green); }
+.pill-bad { background: #fdeaec; color: #a10016; }
+
+.table-requests .row-actions { gap: 8px; }
+/* Botón de aprobar: rojo sólido, como la acción principal de la fila */
+.icon-btn-primary { background: var(--red); border-color: var(--red); color: #fff; }
+.icon-btn-primary:hover { background: #b80016; border-color: #b80016; color: #fff; }
+
+.content-top { padding-top: 44px; }
+.content-top .lead { margin-bottom: 34px; }

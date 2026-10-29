@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar sesión | Iron House Gym</title>
+  <link href="css/estilos.css" rel="stylesheet">
+</head>
+<body>
+  <main class="login-page">
+    <section class="brand-panel" aria-label="Iron House Gym">
+      <div class="brand">
+        <div class="brand-mark">IH</div>
+        <div class="brand-name">IRON HOUSE<span>GYM</span></div>
+      </div>
+
+      <div class="hero">
+        <p class="eyebrow">SISTEMA DE ENTRENAMIENTO</p>
+        <h1>
+          CONTROL Y<br>
+          SEGUIMIENTO.<br>
+          <span class="red">FUERZA SIN<br>LÍMITES.</span>
+        </h1>
+        <p class="tagline">Una plataforma para acompañar cada objetivo, cada rutina y cada progreso.</p>
+        <div class="slash" aria-hidden="true"></div>
+      </div>
+
+      <footer class="panel-footer">IRON HOUSE GYM · SISTEMA INTERNO</footer>
+    </section>
+
+    <section class="form-panel">
+      <div class="form-wrap">
+        <p class="welcome">BIENVENIDO DE NUEVO</p>
+        <h2>Inicia sesión</h2>
+        <p class="intro">Ingresa tus credenciales para acceder a tu espacio de trabajo.</p>
+
+        <form action="login.php" method="POST">
+          <div class="field">
+            <label class="field-label" for="email">Correo electrónico <span class="required">*</span></label>
+            <div class="input-wrap">
+              <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <circle cx="12" cy="8" r="4"></circle><path d="M4.5 21v-2a7.5 7.5 0 0 1 15 0v2"></path>
+              </svg>
+              <input id="email" name="email" type="email" placeholder="nombre@correo.com" autocomplete="username" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="password">Contraseña <span class="required">*</span></label>
+            <div class="input-wrap">
+              <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <rect x="4" y="10" width="16" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+              </svg>
+              <input id="password" name="password" type="password" placeholder="Ingresa tu contraseña" autocomplete="current-password" required>
+              <button class="toggle-password" id="togglePassword" type="button" aria-label="Mostrar contraseña" title="Mostrar u ocultar contraseña">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                  <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"></path><circle cx="12" cy="12" r="3"></circle>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <label class="remember">
+            <input id="remember" type="checkbox" name="remember">
+            <span>Recordarme en este equipo</span>
+          </label>
+
+          <button class="submit-btn" type="submit">Iniciar sesión</button>
+
+          <p class="forgot">¿Olvidaste tu contraseña? <button type="button" id="contactAdmin">Contacta al administrador</button></p>
+          <div id="message" class="message" role="status" aria-live="polite"></div>
+        </form>
+
+        <aside class="demo">
+          <p class="demo-title">ACCESOS DE DEMOSTRACIÓN</p>
+          <div class="role-list" aria-label="Selecciona un rol de demostración">
+            <button type="button" class="role-btn" data-role="Administrador">Administrador</button>
+            <button type="button" class="role-btn" data-role="Recepción">Recepción</button>
+            <button type="button" class="role-btn" data-role="Entrenador">Entrenador</button>
+            <button type="button" class="role-btn" data-role="Cliente">Cliente</button>
+          </div>
+          <p class="demo-hint" id="demoHint">Selecciona un rol y luego inicia sesión.</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const passwordInput = document.getElementById('password');
+    const togglePassword = document.getElementById('togglePassword');
+    const message = document.getElementById('message');
+    const demoHint = document.getElementById('demoHint');
+    const roleButtons = document.querySelectorAll('.role-btn');
+    let selectedRole = '';
+
+    togglePassword.addEventListener('click', () => {
+      const isHidden = passwordInput.type === 'password';
+      passwordInput.type = isHidden ? 'text' : 'password';
+      togglePassword.setAttribute('aria-label', isHidden ? 'Ocultar contraseña' : 'Mostrar contraseña');
+    });
+
+    roleButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        roleButtons.forEach(item => item.classList.remove('active'));
+        button.classList.add('active');
+        selectedRole = button.dataset.role;
+        demoHint.textContent = `Rol seleccionado: ${selectedRole}. Ingresa tus credenciales para continuar.`;
+        message.className = 'message';
+        message.textContent = '';
+      });
+    });
+
+    document.getElementById('loginForm').addEventListener('submit', event => {
+      event.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      const password = passwordInput.value;
+
+      message.className = 'message show';
+      if (!email || !password) {
+        message.classList.add('error');
+        message.textContent = 'Completa tu correo electrónico y contraseña.';
+        return;
+      }
+
+      message.classList.add('success');
+      message.textContent = selectedRole
+        ? `Formulario validado para el rol ${selectedRole}. Para iniciar sesión de verdad, conecta este formulario con tu backend de autenticación.`
+        : 'Formulario validado. Para iniciar sesión de verdad, conecta este formulario con tu backend de autenticación.';
+    });
+
+    document.getElementById('contactAdmin').addEventListener('click', () => {
+      message.className = 'message show';
+      message.classList.add('error');
+      message.textContent = 'Comunícate con el administrador del gimnasio para restablecer tu contraseña.';
+    });
+  </script>
+</body>
+</html>
